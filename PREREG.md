@@ -108,3 +108,9 @@ Review confirmed B2 already follows the brief: over the trailing seven-day windo
 The simulator now clamps sampled clicks to impressions and purchases to clicks. A deterministic low-count test forces (0 impressions, oversized sampled clicks/purchases) and (1 impression, oversized sampled clicks/purchases); generated rows are respectively `(0,0,0)` and `(1,1,1)` for impressions/clicks/purchases. Full suite: 22 tests passed.
 
 Re-ran the documented `python3 evaluate.py --seeds 20 --seed-start 3000` without policy or hyperparameter changes. Revenue means were identical to the previous committed run for all four policies in all three scenarios; key paired policy−B1 deltas remained +$32,938 baseline, +$28,138 faster-fatigue, and +$47,589 greater-uncertainty. Changes to the daily summary artifact are limited to floating-point summation precision; revenue headline metrics and intervals are unchanged. The rerun uses the same paired seeds and common seed-keyed environment draws.
+
+## Entry — 2026-11-12 21:18 Asia/Kolkata
+
+### Final audit input validation follow-up
+
+The audit found that a fractional history day (for example `60.9`) was truncated and accepted as day 60. Protocol history days are integers, so `policy.py` now ignores fractional and nonpositive days; regression coverage confirms those rows do not affect allocation. No policy parameters changed. All 22 tests passed, and `python3 evaluate.py --seeds 20 --seed-start 3000` reproduced the same policy revenue means and 95% intervals in all scenarios. This environment has Python 3.8.2 but no Python 3.11+ executable, so a direct import check under Python 3.11+ could not be performed; import and full suite were verified under the available interpreter.

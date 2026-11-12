@@ -40,6 +40,8 @@ class PolicyTests(unittest.TestCase):
     def test_empty_missing_and_malformed_history(self) -> None:
         policy = Policy(self.creatives, 2000.0, 3)
         malformed = [None, {}, {"day": "bad", "creative_id": "CR001"},
+                     {"day": 60.9, "creative_id": "CR001", "spend": 2000, "revenue": 200000},
+                     {"day": 0, "creative_id": "CR001", "spend": 2000, "revenue": 200000},
                      {"day": 60, "creative_id": "UNKNOWN", "spend": 100, "revenue": 1000},
                      {"day": 60, "creative_id": "CR001", "spend": "bad", "revenue": float("nan")},
                      {"day": 59, "creative_id": "CR004", "spend": 0, "revenue": 1000000},
@@ -47,6 +49,7 @@ class PolicyTests(unittest.TestCase):
                      {"day": 62, "creative_id": "CR003", "spend": 2000, "revenue": 20000}]
         self.assert_valid_allocation(policy.allocate(61, []))
         self.assert_valid_allocation(policy.allocate(61, malformed))
+        self.assertEqual(policy.allocate(61, malformed), policy.allocate(61, []))
 
     def test_zero_spend_rows_do_not_create_infinite_rates(self) -> None:
         policy = Policy(self.creatives, 2000.0, 4)

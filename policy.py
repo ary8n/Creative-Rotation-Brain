@@ -52,7 +52,7 @@ class Policy:
             value = float(row.get("day"))
         except (TypeError, ValueError, OverflowError):
             return None
-        if not math.isfinite(value) or value < 0:
+        if not math.isfinite(value) or value < 1 or not value.is_integer():
             return None
         return int(value)
 
