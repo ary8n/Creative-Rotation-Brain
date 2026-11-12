@@ -2,12 +2,12 @@
   "servers": {
     "interview-panel": {
       "type": "stdio",
-      "command": "python3",
+      "command": "/home/kiit/.pyenv/versions/3.11.14/bin/python3",
       "args": [
-        "${workspaceFolder}/.interview/ivkit/panel_mcp.py"
+        "/home/kiit/projects/interview/.interview/ivkit/panel_mcp.py"
       ],
       "env": {
-        "INTERVIEW_REPO": "${workspaceFolder}"
+        "INTERVIEW_REPO": "/home/kiit/projects/interview"
       }
     }
   }

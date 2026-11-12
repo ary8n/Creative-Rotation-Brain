@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"python3\" \"$CLAUDE_PROJECT_DIR/.interview/ivkit/hook_log.py\" --tool claude-code session_start || true",
+            "command": "\"/home/kiit/.pyenv/versions/3.11.14/bin/python3\" \"/home/kiit/projects/interview/.interview/ivkit/hook_log.py\" --tool claude-code session_start || true",
             "timeout": 5
           }
         ]
@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"python3\" \"$CLAUDE_PROJECT_DIR/.interview/ivkit/hook_log.py\" --tool claude-code user_prompt || true",
+            "command": "\"/home/kiit/.pyenv/versions/3.11.14/bin/python3\" \"/home/kiit/projects/interview/.interview/ivkit/hook_log.py\" --tool claude-code user_prompt || true",
             "timeout": 5
           }
         ]
@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"python3\" \"$CLAUDE_PROJECT_DIR/.interview/ivkit/hook_log.py\" --tool claude-code tool_use || true",
+            "command": "\"/home/kiit/.pyenv/versions/3.11.14/bin/python3\" \"/home/kiit/projects/interview/.interview/ivkit/hook_log.py\" --tool claude-code tool_use || true",
             "timeout": 5
           }
         ]
@@ -39,7 +39,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"python3\" \"$CLAUDE_PROJECT_DIR/.interview/ivkit/hook_log.py\" --tool claude-code stop || true",
+            "command": "\"/home/kiit/.pyenv/versions/3.11.14/bin/python3\" \"/home/kiit/projects/interview/.interview/ivkit/hook_log.py\" --tool claude-code stop || true",
             "timeout": 5
           }
         ]
@@ -50,7 +50,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"python3\" \"$CLAUDE_PROJECT_DIR/.interview/ivkit/hook_log.py\" --tool claude-code session_end || true",
+            "command": "\"/home/kiit/.pyenv/versions/3.11.14/bin/python3\" \"/home/kiit/projects/interview/.interview/ivkit/hook_log.py\" --tool claude-code session_end || true",
             "timeout": 5
           }
         ]

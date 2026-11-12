@@ -1,0 +1,23 @@
+day,competitor,platform,format,hook_type,primary_text
+6,BRAND_F,meta,video_30s,problem_solution,"Clinically tested on sensitive skin. Fragrance-free, non-comedogenic, and made in small batches."
+7,BRAND_A,tiktok,story,ugc_testimonial,"We formulated this over three years with a dermatology lab in Portland, testing every batch for irritation before it ships, and we still run the same panel on every production run today because reformulating is easier than apologising."
+10,BRAND_E,google,static_image,ugc_testimonial,A lightweight daily formula built around ceramides and niacinamide. Free shipping over $40.
+12,BRAND_E,google,story,benefit_led,"Start with the serum, add the cream at night. Most people see texture change around week four."
+15,BRAND_D,meta,carousel,founder_story,Thousands of customers use it morning and night. Full routine in under two minutes.
+16,BRAND_A,google,story,benefit_led,Thousands of customers use it morning and night. Full routine in under two minutes.
+20,BRAND_D,youtube,story,curiosity,Thousands of customers use it morning and night. Full routine in under two minutes.
+23,BRAND_E,meta,carousel,social_proof,"We formulated this over three years with a dermatology lab in Portland, testing every batch for irritation before it ships, and we still run the same panel on every production run today because reformulating is easier than apologising."
+25,BRAND_F,youtube,story,curiosity,"Clinically tested on sensitive skin. Fragrance-free, non-comedogenic, and made in small batches."
+26,BRAND_E,google,video_30s,problem_solution,Thousands of customers use it morning and night. Full routine in under two minutes.
+27,BRAND_E,tiktok,carousel,urgency,"We formulated this over three years with a dermatology lab in Portland, testing every batch for irritation before it ships, and we still run the same panel on every production run today because reformulating is easier than apologising."
+28,BRAND_A,meta,video_30s,ugc_testimonial,Thousands of customers use it morning and night. Full routine in under two minutes.
+33,BRAND_C,meta,video_15s,benefit_led,A lightweight daily formula built around ceramides and niacinamide. Free shipping over $40.
+34,BRAND_E,meta,static_image,benefit_led,"We formulated this over three years with a dermatology lab in Portland, testing every batch for irritation before it ships, and we still run the same panel on every production run today because reformulating is easier than apologising."
+37,BRAND_A,tiktok,static_image,ugc_testimonial,"Clinically tested on sensitive skin. Fragrance-free, non-comedogenic, and made in small batches."
+39,BRAND_A,google,video_30s,problem_solution,"Start with the serum, add the cream at night. Most people see texture change around week four."
+46,BRAND_E,meta,carousel,problem_solution,Thousands of customers use it morning and night. Full routine in under two minutes.
+51,BRAND_A,meta,carousel,problem_solution,Thousands of customers use it morning and night. Full routine in under two minutes.
+52,BRAND_F,tiktok,static_image,problem_solution,"We formulated this over three years with a dermatology lab in Portland, testing every batch for irritation before it ships, and we still run the same panel on every production run today because reformulating is easier than apologising."
+53,BRAND_B,google,story,urgency,A lightweight daily formula built around ceramides and niacinamide. Free shipping over $40.
+54,BRAND_E,google,story,benefit_led,"Clinically tested on sensitive skin. Fragrance-free, non-comedogenic, and made in small batches."
+56,BRAND_F,tiktok,story,urgency,Thousands of customers use it morning and night. Full routine in under two minutes.

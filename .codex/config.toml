@@ -1,9 +1,10 @@
 # Panel for this session. `interview setup` rewrites the paths for this machine.
 [mcp_servers.interview-panel]
-command = 'python3'
-args = ['.interview/ivkit/panel_mcp.py']
+command = '/home/kiit/.pyenv/versions/3.11.14/bin/python3'
+args = ['/home/kiit/projects/interview/.interview/ivkit/panel_mcp.py']
+cwd = '/home/kiit/projects/interview'
 startup_timeout_sec = 20
 default_tools_approval_mode = "approve"
 
 [mcp_servers.interview-panel.env]
-INTERVIEW_REPO = '.'
+INTERVIEW_REPO = '/home/kiit/projects/interview'
