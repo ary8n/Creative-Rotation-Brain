@@ -230,8 +230,9 @@ class SimulatedAccount:
                 overdispersion = float(self.dynamics.get("impression_overdispersion", 1.0))
                 impressions = _sample_count(expected_impressions,
                                             _stable_rng(self.seed, "impressions", day, cid), overdispersion)
-                clicks = _sample_count(impressions * float(calibration["global_ctr"]),
-                                       _stable_rng(self.seed, "clicks", day, cid))
+                clicks = min(impressions, _sample_count(
+                    impressions * float(calibration["global_ctr"]),
+                    _stable_rng(self.seed, "clicks", day, cid)))
                 rate_ratio = self.latent_roas[cid] / float(calibration["global_roas"])
                 reference = float(calibration["reference_daily_spend_usd"])
                 expected_spend = amount * _mean_delivery(self.dynamics)
@@ -241,8 +242,9 @@ class SimulatedAccount:
                 market = self.current_market_factor(day)
                 purchase_rate = min(1.0, float(calibration["global_purchase_per_click"])
                                     * rate_ratio * saturation * fatigue * market)
-                purchases = _sample_count(clicks * purchase_rate,
-                                          _stable_rng(self.seed, "purchases", day, cid))
+                purchases = min(clicks, _sample_count(
+                    clicks * purchase_rate,
+                    _stable_rng(self.seed, "purchases", day, cid)))
                 mean_aov = float(calibration["mean_order_value"])
                 order_value_cv = float(self.dynamics.get("order_value_cv", 0.0))
                 aov_log_sd = math.sqrt(math.log1p(order_value_cv * order_value_cv) / purchases) if purchases else 0.0

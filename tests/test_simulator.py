@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+from unittest.mock import patch
 
 from simulator import (
     DAILY_BUDGET, FIRST_EVAL_DAY, LAST_EVAL_DAY, SimulatedAccount,
@@ -89,6 +90,21 @@ class SimulatorTests(unittest.TestCase):
                 self.assertLessEqual(row["purchases"], row["clicks"])
                 self.assertEqual(row["revenue"] > 0, row["purchases"] > 0)
 
+    def test_click_and_purchase_counts_are_bounded_at_low_counts(self) -> None:
+        """Sampling noise cannot make funnel counts exceed their parent counts."""
+        for sampled_impressions, expected in ((0, (0, 0, 0)), (1, (1, 1, 1))):
+            env = SimulatedAccount(131 + sampled_impressions, creatives=self.creatives,
+                                   initial_history=self.initial)
+            # Force deterministic Gaussian count draws that would otherwise
+            # violate the funnel (including clicks/purchases when parent=0).
+            with patch("simulator._sample_count",
+                       side_effect=[sampled_impressions, 9, 7]):
+                rows = env.step(61, {self.served_ids[0]: 1.0})
+            row = next(item for item in rows if item["creative_id"] == self.served_ids[0])
+            self.assertEqual((row["impressions"], row["clicks"], row["purchases"]), expected)
+            self.assertLessEqual(row["clicks"], row["impressions"])
+            self.assertLessEqual(row["purchases"], row["clicks"])
+
     def test_policy_history_has_no_future_rows_and_oracle_cannot_read_future_market(self) -> None:
         env = SimulatedAccount(14, creatives=self.creatives, initial_history=self.initial)
         before = env.policy_history(61)
@@ -123,6 +139,25 @@ class SimulatorTests(unittest.TestCase):
         self.assertAlmostEqual(sum(allocation.values()), DAILY_BUDGET)
         self.assertEqual(len(allocation), 50)
         self.assertTrue(all(value >= 0 for value in allocation.values()))
+
+    def test_windowed_greedy_uses_pooled_population_roas_for_fallback(self) -> None:
+        """An under-threshold creative gets total revenue / total spend, not a mean of ROAS values."""
+        creatives = [{"creative_id": cid} for cid in ["A", "B", "C", "D", "E", "F"]]
+        history = []
+        # A-E meet the impression threshold. A has ROAS 10; B-E have ROAS 0.
+        # F has fewer than 2,000 impressions. The pooled population ROAS is
+        # 10 / 401 = 0.02494, so F ranks above the zero-ROAS eligible creatives.
+        history.append({"day": 60, "creative_id": "A", "spend": 1, "revenue": 10,
+                        "impressions": 2000})
+        for cid in ["B", "C", "D", "E"]:
+            history.append({"day": 60, "creative_id": cid, "spend": 100, "revenue": 0,
+                            "impressions": 2000})
+        history.append({"day": 60, "creative_id": "F", "spend": 0, "revenue": 0,
+                        "impressions": 100})
+        allocation = windowed_greedy_allocation(creatives, history, 61, 2000)
+        self.assertAlmostEqual(allocation["A"], 300.0)
+        self.assertAlmostEqual(allocation["F"], 300.0)
+        self.assertAlmostEqual(allocation["E"], 500.0)
 
 
 if __name__ == "__main__":

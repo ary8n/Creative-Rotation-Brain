@@ -96,3 +96,15 @@ The frozen policy was evaluated with paired seeds 3000–3019 against B1, exact 
 Mean spend was approximately $56.0k over 30 days for each policy, with 93.4–93.6% budget utilization. The paired policy-difference intervals are above zero in these three scenarios. This is evidence only under the modeled environment. Historical ROAS is not a causal response curve, the policy score power and allocation limits are heuristic, and the three scenarios do not cover all plausible delivery or market dynamics. The result does not establish real-world improvement. The clairvoyant has current-state latent effectiveness but no future random-outcome access.
 
 `python3 -m unittest discover -s tests -v` passed 20 tests, including allocation constraints, cold starts, malformed/zero-spend history, deterministic calls, future-row exclusion, and policy module isolation. Evaluation command: `python3 evaluate.py --seeds 20 --seed-start 3000`.
+
+## Entry — 2026-11-12 20:23 Asia/Kolkata
+
+### Review follow-up: funnel bounds, B2 fallback, and documentation
+
+Preserved the original assessment `README.md` and added a separate `SOLUTION.md` (250 words, below the brief's 400-word maximum). It contains methodology, commands, evidence scope and limitations.
+
+Review confirmed B2 already follows the brief: over the trailing seven-day window, the fallback is pooled population ROAS, total revenue divided by total spend. No behavior change was needed. Added a targeted test distinguishing that pooled rate from an unweighted mean: with pooled ROAS `10/401`, the under-threshold creative ranks above zero-ROAS eligible creatives, as the current implementation specifies.
+
+The simulator now clamps sampled clicks to impressions and purchases to clicks. A deterministic low-count test forces (0 impressions, oversized sampled clicks/purchases) and (1 impression, oversized sampled clicks/purchases); generated rows are respectively `(0,0,0)` and `(1,1,1)` for impressions/clicks/purchases. Full suite: 22 tests passed.
+
+Re-ran the documented `python3 evaluate.py --seeds 20 --seed-start 3000` without policy or hyperparameter changes. Revenue means were identical to the previous committed run for all four policies in all three scenarios; key paired policy−B1 deltas remained +$32,938 baseline, +$28,138 faster-fatigue, and +$47,589 greater-uncertainty. Changes to the daily summary artifact are limited to floating-point summation precision; revenue headline metrics and intervals are unchanged. The rerun uses the same paired seeds and common seed-keyed environment draws.
