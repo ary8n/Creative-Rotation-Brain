@@ -19,7 +19,8 @@ Audited the clean `main` baseline at `e6598c84d71ac57b57817fdf23a7ee445135de1b` 
 | Determinism | PASS | Repeated calls on the same instance and inputs returned identical dictionaries. |
 | Runtime | PASS | Maximum observed call was 0.0106 seconds over 30 decisions on the complete history, far below 10 seconds. |
 | No simulator or ground-truth access | PASS | Clean import left `simulator` and `config` absent from `sys.modules`; source imports only `math`, `collections`, and `typing`. |
-| No network or local-file dependency in policy | PASS | Policy imports no networking or file APIs and works from an extracted temporary checkout. No external packages are used. The actual evaluator’s network-isolation setting is controlled outside this repository and was not independently inspected. |
+| No network or local-file dependency in policy | PASS | Policy imports no networking or file APIs and works from an extracted temporary checkout. No external packages are used. |
+| External evaluator enforces network isolation | NOT VERIFIED | The evaluation host is outside this repository; its network sandbox setting was not independently inspected. The policy itself makes no network calls or imports. |
 | Documented setup, test, and evaluation commands | PASS | Python 3.11.14 virtual environment creation/activation and both commands ran successfully from a clean archive. |
 | Baseline evaluation reproducibility | PASS | See results below; figures match the established baseline. |
 | README limit and required content | PASS | Root `README.md` is 263 words and covers method, exclusions, evidence limits, next-day work, and commands. |
