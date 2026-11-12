@@ -1,0 +1,65 @@
+{
+  "fatigue": {
+    "decision": "do not use age decay unless it improves spend-weighted held-out error",
+    "selected_log_decay_per_day": 0.016,
+    "test_no_decay": {
+      "creatives": 40,
+      "heldout_spend": 26965.340000000004,
+      "mae": 0.5427725117645192,
+      "rmse": 0.6668884936773732,
+      "spend_weighted_mae": 0.3693883931026947,
+      "spend_weighted_rmse": 0.4811941713729089
+    },
+    "test_with_decay": {
+      "creatives": 40,
+      "heldout_spend": 26965.340000000004,
+      "mae": 0.38063404702091697,
+      "rmse": 0.46024963250618217,
+      "spend_weighted_mae": 0.4465929447586729,
+      "spend_weighted_rmse": 0.5307307078568057
+    },
+    "validation_no_decay_rmse": 0.7010198286465165,
+    "validation_spend_weighted_rmse": 0.5296749691378401
+  },
+  "metadata": {
+    "global_prior": {
+      "creatives": 40,
+      "heldout_spend": 26965.340000000004,
+      "mae": 0.8296648873651857,
+      "rmse": 0.9541331335748704,
+      "spend_weighted_mae": 0.7694671756654999,
+      "spend_weighted_rmse": 0.9897763612384636
+    },
+    "metadata_prior": {
+      "creatives": 40,
+      "heldout_spend": 26965.340000000004,
+      "mae": 0.8210509850354476,
+      "rmse": 0.9458529322817122,
+      "spend_weighted_mae": 0.7668922987533553,
+      "spend_weighted_rmse": 0.9873801411881509
+    },
+    "method": "leave-one-creative-out train prior; 0.1 log-weight on geometric mean of format and hook rates"
+  },
+  "split": {
+    "fatigue_fit_days": [
+      1,
+      30
+    ],
+    "fatigue_test_days": [
+      46,
+      60
+    ],
+    "fatigue_validation_days": [
+      31,
+      45
+    ],
+    "metadata_test_days": [
+      46,
+      60
+    ],
+    "metadata_train_days": [
+      1,
+      45
+    ]
+  }
+}

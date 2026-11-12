@@ -78,3 +78,21 @@ The preceding implementation note recorded preliminary clairvoyant values from a
 - Greater uncertainty clairvoyant: $225,856 ($160,589–$291,124); mean spend $56,058; ROAS 4.025; utilization 93.4%; paired oracle−B1 +$140,303 (95% CI $77,793–$202,814).
 
 These corrected oracle results still depend on a simulated diminishing-return curve and perfect knowledge of sampled latent creative effectiveness. Their gap from B1 is an upper-bound diagnostic within this model, not a forecast of recoverable real-world revenue.
+
+## Entry — 2026-11-12 20:06 Asia/Kolkata
+
+### Milestone 3 policy and evaluation
+
+Implemented `policy.py` against the assessment interface. The policy receives only creative metadata and the history argument; it imports neither the simulator nor configuration and does not read files or access the network. It filters current/future rows, invalid values and unknown creative IDs. The allocation combines a global revenue-per-spend prior, weak format/hook evidence, lifetime creative outcomes shrunk toward that prior, and a trailing-seven-day estimate shrunk toward lifetime performance. It applies a modest evidence-dependent uncertainty bonus, reserves $8 per never-served and $2 per served creative, caps any single allocation at $400, and redistributes the remainder by adjusted score. It has no explicit creative-age penalty.
+
+The reproducible historical checks in `analysis/policy_signal_validation.py` used 40 served creatives, training days 1–45 and held-out days 46–60 ($26,965.34 held-out spend). The weak metadata prior lowered spend-weighted RMSE from 0.98978 to 0.98738 (0.24%); this is a small predictive improvement, not a causal metadata effect. For age decay, 0.016/day was selected with days 31–45 after fitting days 1–30; on days 46–60 spend-weighted RMSE worsened from 0.48119 to 0.53073, so age decay was excluded. Unweighted RMSE moved in the other direction, indicating metric sensitivity. Neither validation isolates causal fatigue or metadata effects.
+
+The frozen policy was evaluated with paired seeds 3000–3019 against B1, exact B2 and the clairvoyant benchmark across all three configured scenarios. Revenue means and 95% t intervals, paired policy differences, ROAS, utilization and normalized capture are recorded in `artifacts/simulation_benchmarks.json`, `artifacts/simulation_benchmarks.csv`, `artifacts/simulation_daily.csv`, and summarized in `POLICY.md`.
+
+- Baseline: B1 $84,353 ($81,446–$87,260), B2 $99,413 ($93,134–$105,693), policy $117,291 ($109,384–$125,198), clairvoyant $143,036 ($127,434–$158,637). Paired policy−B1 +$32,938 ($27,445–$38,431); policy−B2 +$17,878 ($15,706–$20,050); normalized capture 0.561.
+- Faster fatigue: B1 $61,029 ($58,584–$63,474), B2 $76,079 ($70,037–$82,122), policy $89,167 ($81,467–$96,866), clairvoyant $119,996 ($104,131–$135,861). Paired policy−B1 +$28,138 ($22,511–$33,764); policy−B2 +$13,088 ($11,052–$15,123); capture 0.477.
+- Greater uncertainty: B1 $82,829 ($78,900–$86,759), B2 $111,094 ($100,528–$121,660), policy $130,418 ($116,582–$144,254), clairvoyant $179,461 ($143,589–$215,333). Paired policy−B1 +$47,589 ($37,139–$58,038); policy−B2 +$19,324 ($15,858–$22,789); capture 0.492.
+
+Mean spend was approximately $56.0k over 30 days for each policy, with 93.4–93.6% budget utilization. The paired policy-difference intervals are above zero in these three scenarios. This is evidence only under the modeled environment. Historical ROAS is not a causal response curve, the policy score power and allocation limits are heuristic, and the three scenarios do not cover all plausible delivery or market dynamics. The result does not establish real-world improvement. The clairvoyant has current-state latent effectiveness but no future random-outcome access.
+
+`python3 -m unittest discover -s tests -v` passed 20 tests, including allocation constraints, cold starts, malformed/zero-spend history, deterministic calls, future-row exclusion, and policy module isolation. Evaluation command: `python3 evaluate.py --seeds 20 --seed-start 3000`.

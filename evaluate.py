@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import math
 import statistics
 from pathlib import Path
 from typing import Any
@@ -15,6 +16,7 @@ from simulator import (
     clairvoyant_allocation, load_creatives, load_initial_history,
     uniform_allocation, windowed_greedy_allocation,
 )
+from policy import Policy
 
 T_CRITICAL = {
     1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571, 6: 2.447,
@@ -23,7 +25,7 @@ T_CRITICAL = {
     19: 2.093, 20: 2.086, 21: 2.080, 22: 2.074, 23: 2.069, 24: 2.064,
     25: 2.060, 26: 2.056, 27: 2.052, 28: 2.048, 29: 2.045, 30: 2.042,
 }
-POLICIES = ("B1_uniform", "B2_windowed_greedy", "clairvoyant")
+POLICIES = ("B1_uniform", "B2_windowed_greedy", "our_policy", "clairvoyant")
 MEASURES = ("revenue", "spend", "impressions", "clicks", "purchases", "roas", "budget_utilization")
 
 
@@ -43,11 +45,29 @@ def aggregate(rows: list[dict[str, Any]]) -> dict[str, float]:
     return result
 
 
+def normalize_policy_shares(shares: dict[str, float], creatives: list[dict[str, str]],
+                            daily_budget: float) -> dict[str, float]:
+    """Apply the protocol's normalization before passing dollars to simulator."""
+    known = {creative["creative_id"]: 0.0 for creative in creatives}
+    for cid, value in shares.items():
+        if cid not in known:
+            continue
+        amount = float(value)
+        if not math.isfinite(amount) or amount < 0:
+            raise ValueError("policy shares must be finite and nonnegative")
+        known[cid] = amount
+    total = sum(known.values())
+    if total <= 0:
+        return uniform_allocation(creatives, daily_budget)
+    return {cid: value / total * daily_budget for cid, value in known.items()}
+
+
 def run_episode(policy_name: str, seed: int, scenario: str,
                 creatives: list[dict[str, str]], initial_history: list[dict[str, Any]],
                 config: dict[str, Any]) -> tuple[dict[str, float], list[dict[str, float]]]:
     env = SimulatedAccount(seed, scenario, config=config, creatives=creatives,
                            initial_history=initial_history)
+    policy = Policy(creatives, env.daily_budget, seed) if policy_name == "our_policy" else None
     all_rows: list[dict[str, Any]] = []
     daily: list[dict[str, float]] = []
     for day in range(FIRST_EVAL_DAY, LAST_EVAL_DAY + 1):
@@ -56,6 +76,10 @@ def run_episode(policy_name: str, seed: int, scenario: str,
             allocation = uniform_allocation(creatives, env.daily_budget)
         elif policy_name == "B2_windowed_greedy":
             allocation = windowed_greedy_allocation(creatives, history, day, env.daily_budget)
+        elif policy_name == "our_policy":
+            assert policy is not None
+            shares = policy.allocate(day, history)
+            allocation = normalize_policy_shares(shares, creatives, env.daily_budget)
         elif policy_name == "clairvoyant":
             allocation = clairvoyant_allocation(env, day)
         else:
@@ -95,8 +119,8 @@ def build_report(seed_count: int = 20, seed_start: int = 1000,
         "method": "paired simulator runs; 95% two-sided t intervals across seed-level runs",
         "seed_count": seed_count, "seeds": seed_values,
         "policies": list(POLICIES), "scenarios": {},
-        "normalized_capture": None,
-        "normalized_capture_note": "not computed until a candidate policy exists",
+        "normalized_capture": {},
+        "normalized_capture_note": "(our policy mean revenue - B1 mean revenue) / (clairvoyant mean revenue - B1 mean revenue)",
     }
     summary_rows: list[dict[str, Any]] = []
     daily_rows: list[dict[str, Any]] = []
@@ -141,13 +165,32 @@ def build_report(seed_count: int = 20, seed_start: int = 1000,
                                    "metric": "budget_utilization", **spend_summary})
 
         for comparison_name, against in (("B2_minus_B1", "B2_windowed_greedy"),
+                                         ("ours_minus_B1", "our_policy"),
+                                         ("ours_minus_B2", "our_policy"),
                                          ("clairvoyant_minus_B1", "clairvoyant")):
-            paired = [raw[scenario][against][i]["revenue"] - raw[scenario]["B1_uniform"][i]["revenue"]
+            baseline = "B2_windowed_greedy" if comparison_name == "ours_minus_B2" else "B1_uniform"
+            paired = [raw[scenario][against][i]["revenue"] - raw[scenario][baseline][i]["revenue"]
                       for i in range(seed_count)]
             scenario_report["paired_differences"][comparison_name] = interval(paired)
         b1_mean = scenario_report["policies"]["B1_uniform"]["revenue"]["mean"]
         oracle_mean = scenario_report["policies"]["clairvoyant"]["revenue"]["mean"]
+        ours_mean = scenario_report["policies"]["our_policy"]["revenue"]["mean"]
         scenario_report["headroom_clairvoyant_over_B1"] = oracle_mean - b1_mean
+        capture = (ours_mean - b1_mean) / (oracle_mean - b1_mean) if oracle_mean != b1_mean else None
+        seed_capture = []
+        for index in range(seed_count):
+            denominator = raw[scenario]["clairvoyant"][index]["revenue"] - raw[scenario]["B1_uniform"][index]["revenue"]
+            if abs(denominator) > 1e-9:
+                seed_capture.append((raw[scenario]["our_policy"][index]["revenue"]
+                                     - raw[scenario]["B1_uniform"][index]["revenue"]) / denominator)
+        scenario_report["normalized_capture"] = {
+            "ratio_of_means": capture,
+            "seed_ratio_mean_and_95_ci": interval(seed_capture),
+        }
+        report["normalized_capture"][scenario] = scenario_report["normalized_capture"]
+        for summary_row in summary_rows:
+            if summary_row["scenario"] == scenario and summary_row["policy"] == "our_policy":
+                summary_row["normalized_capture"] = capture if capture is not None else ""
         report["scenarios"][scenario] = scenario_report
 
     output_dir = Path(__file__).resolve().parent / "artifacts"
@@ -188,7 +231,12 @@ def main() -> None:
         paired = item["paired_differences"]["B2_minus_B1"]
         print(f"  B2-B1 paired revenue delta: ${paired['mean']:,.0f} "
               f"(95% CI ${paired['ci95_low']:,.0f}–${paired['ci95_high']:,.0f})")
-    print("Candidate capture metric: not applicable until a candidate policy exists.")
+        for comparison in ("ours_minus_B1", "ours_minus_B2"):
+            difference = item["paired_differences"][comparison]
+            print(f"  {comparison} paired revenue delta: ${difference['mean']:,.0f} "
+                  f"(95% CI ${difference['ci95_low']:,.0f}–${difference['ci95_high']:,.0f})")
+        print(f"  normalized capture (ratio of means): "
+              f"{item['normalized_capture']['ratio_of_means']:.3f}")
 
 
 if __name__ == "__main__":
