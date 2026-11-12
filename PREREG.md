@@ -50,3 +50,31 @@ Supplement simulation with time-based historical validation: fit/calibrate only 
 ### Deliberately excluded
 
 Deep reinforcement learning; real-time competitor scraping; production advertising integrations; complex dashboards; unnecessary abstractions and frameworks.
+
+## Entry — 2026-11-12 19:38 Asia/Kolkata
+
+### Milestone 2 implementation and evidence
+
+Implemented a 30-day simulator and paired benchmark loop. `config.json` holds all simulator calibration and scenario parameters; initial policy history uses the reported day-60 snapshot, while simulator calibration uses final outcomes. Policy-facing rows contain only protocol fields from days strictly before the decision day. The simulator offers no policy-facing ground-truth/config accessor; the clairvoyant benchmark is the only component given the environment object.
+
+Served creative rates use the preregistered observational data with $1,000 prior-spend shrinkage toward account ROAS. Ten unserved creatives receive format/hook priors and higher log-scale uncertainty, with no fabricated outcome records. Delivery calibration separates empirical row under-delivery frequency/factor range from an assumed daily account-pacing multiplier to reconcile mean row-level delivery (0.9854) with the observed budget-weighted utilization (0.9370); this decomposition is not identified by the files. The concave spend-response elasticity (0.12 baseline), fatigue rates, market noise and uncertainty expansion remain assumptions. They are configurable and documented in `SIMULATION.md`.
+
+`python3 -m unittest discover -s tests -v`: 10 tests pass, covering reproducibility, budget constraints, cold starts, zero/sub-dollar spend, the 30-day sequence, all three benchmark allocations, nonnegative and internally consistent outcomes, and no future rows in policy history. `python3 evaluate.py --seeds 20` completed for baseline, faster-fatigue, and greater-uncertainty scenarios. Across each scenario's paired seeds, B2's mean cumulative revenue difference from B1 was positive with its 95% paired t interval above zero:
+
+- Baseline: B1 $85,548 (95% CI $83,576–$87,519); B2 $106,277 ($97,581–$114,974); clairvoyant $163,881 ($138,629–$189,133); B2−B1 +$20,729 ($13,678–$27,780). Mean budget utilization was 93.3–93.6%.
+- Faster fatigue: B1 $62,203 ($60,291–$64,116); B2 $83,514 ($75,026–$92,002); clairvoyant $138,189 ($113,202–$163,175); B2−B1 +$21,311 ($14,424–$28,197).
+- Greater uncertainty: B1 $85,553 ($82,107–$88,999); B2 $123,848 ($107,288–$140,408); clairvoyant $222,508 ($158,613–$286,403); B2−B1 +$38,295 ($24,919–$51,670).
+
+These are model-conditional benchmark results, not evidence of real-world lift. The clairvoyant interval widens sharply under greater creative uncertainty, as expected when it can identify each sampled world's winners. The candidate policy and normalized capture metric remain unimplemented and unmeasured. Historical holdout validation remains future work; this milestone evaluates the simulated environment only.
+
+## Entry — 2026-11-12 19:42 Asia/Kolkata
+
+### Correction to Milestone 2 oracle evaluation
+
+The preceding implementation note recorded preliminary clairvoyant values from an oracle that forced at least $1 onto every creative. Review found that this could waste budget where activating a low-value creative was inferior to investing in an already active one. The oracle now compares the $1 activation value with the budget's marginal value, and can leave creatives inactive. B1/B2 results and paired B2−B1 differences are unchanged. The final regenerated `artifacts/simulation_benchmarks.json` and CSVs use the corrected oracle; the daily CSV also includes ROAS intervals.
+
+- Baseline clairvoyant: $165,945 cumulative revenue (95% CI $140,153–$191,738); mean spend $56,153; ROAS 2.954; utilization 93.6%; paired oracle−B1 difference +$80,397 (95% CI $55,806–$104,989).
+- Faster fatigue clairvoyant: $140,383 ($114,889–$165,877); mean spend $56,080; ROAS 2.502; utilization 93.5%; paired oracle−B1 +$78,179 (95% CI $53,955–$102,404).
+- Greater uncertainty clairvoyant: $225,856 ($160,589–$291,124); mean spend $56,058; ROAS 4.025; utilization 93.4%; paired oracle−B1 +$140,303 (95% CI $77,793–$202,814).
+
+These corrected oracle results still depend on a simulated diminishing-return curve and perfect knowledge of sampled latent creative effectiveness. Their gap from B1 is an upper-bound diagnostic within this model, not a forecast of recoverable real-world revenue.
