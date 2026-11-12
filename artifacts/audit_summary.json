@@ -1,0 +1,1487 @@
+{
+  "by_format_and_hook": {
+    "format": {
+      "carousel": {
+        "creatives": 5,
+        "ctr": 0.011845697907729897,
+        "purchase_per_click": 0.028353165858674895,
+        "revenue": 29984.580000000016,
+        "roas": 1.9386715598038617,
+        "rows": 196,
+        "spend": 15466.56
+      },
+      "static_image": {
+        "creatives": 10,
+        "ctr": 0.01630049806308799,
+        "purchase_per_click": 0.02202512306908844,
+        "revenue": 34268.24,
+        "roas": 1.5186436712027414,
+        "rows": 455,
+        "spend": 22565.030000000002
+      },
+      "story": {
+        "creatives": 10,
+        "ctr": 0.014689040851754797,
+        "purchase_per_click": 0.02215918665393473,
+        "revenue": 47459.28999999997,
+        "roas": 1.6988765983585874,
+        "rows": 461,
+        "spend": 27935.68999999998
+      },
+      "video_15s": {
+        "creatives": 5,
+        "ctr": 0.017758973431128307,
+        "purchase_per_click": 0.022397294175878567,
+        "revenue": 31101.76999999999,
+        "roas": 1.9519563640197708,
+        "rows": 201,
+        "spend": 15933.640000000005
+      },
+      "video_30s": {
+        "creatives": 10,
+        "ctr": 0.014953866410820815,
+        "purchase_per_click": 0.024974370657250257,
+        "revenue": 59080.79000000004,
+        "roas": 1.935641438029998,
+        "rows": 471,
+        "spend": 30522.59
+      }
+    },
+    "hook_type": {
+      "benefit_led": {
+        "creatives": 5,
+        "ctr": 0.014674862770091075,
+        "purchase_per_click": 0.02171476604090782,
+        "revenue": 17568.909999999996,
+        "roas": 1.4444778797004953,
+        "rows": 223,
+        "spend": 12162.81000000001
+      },
+      "curiosity": {
+        "creatives": 6,
+        "ctr": 0.01885384733828861,
+        "purchase_per_click": 0.012992798277526172,
+        "revenue": 8816.24,
+        "roas": 0.9730175968355712,
+        "rows": 305,
+        "spend": 9060.720000000003
+      },
+      "founder_story": {
+        "creatives": 4,
+        "ctr": 0.010881879896910546,
+        "purchase_per_click": 0.029382085831305277,
+        "revenue": 38014.05,
+        "roas": 1.8400507472685368,
+        "rows": 240,
+        "spend": 20659.239999999976
+      },
+      "problem_solution": {
+        "creatives": 6,
+        "ctr": 0.016333235626517527,
+        "purchase_per_click": 0.02312859884836852,
+        "revenue": 9760.370000000003,
+        "roas": 1.0640580064059095,
+        "rows": 233,
+        "spend": 9172.780000000004
+      },
+      "social_proof": {
+        "creatives": 5,
+        "ctr": 0.016477050064057315,
+        "purchase_per_click": 0.024863215096586892,
+        "revenue": 39168.19,
+        "roas": 1.9273085223744426,
+        "rows": 238,
+        "spend": 20322.740000000013
+      },
+      "ugc_testimonial": {
+        "creatives": 7,
+        "ctr": 0.016752129507988305,
+        "purchase_per_click": 0.025405659354558924,
+        "revenue": 48144.91000000002,
+        "roas": 2.3865623573301966,
+        "rows": 253,
+        "spend": 20173.330000000016
+      },
+      "urgency": {
+        "creatives": 7,
+        "ctr": 0.01433069307935477,
+        "purchase_per_click": 0.023103478799681332,
+        "revenue": 40422.0,
+        "roas": 1.9366717628350874,
+        "rows": 292,
+        "spend": 20871.889999999985
+      }
+    }
+  },
+  "competitors": {
+    "by_competitor": {
+      "BRAND_A": 6,
+      "BRAND_B": 1,
+      "BRAND_C": 1,
+      "BRAND_D": 2,
+      "BRAND_E": 8,
+      "BRAND_F": 4
+    },
+    "by_format": {
+      "carousel": 5,
+      "static_image": 4,
+      "story": 8,
+      "video_15s": 1,
+      "video_30s": 4
+    },
+    "by_hook_type": {
+      "benefit_led": 5,
+      "curiosity": 2,
+      "founder_story": 1,
+      "problem_solution": 6,
+      "social_proof": 1,
+      "ugc_testimonial": 4,
+      "urgency": 3
+    },
+    "by_platform": {
+      "google": 7,
+      "meta": 8,
+      "tiktok": 5,
+      "youtube": 2
+    },
+    "launches": 22,
+    "own_launch_days_same_day_as_competitor": 13,
+    "own_launch_days_within_3_days_of_competitor": 28,
+    "own_unique_launch_days": 29
+  },
+  "creative_roas": {
+    "above_1": 29,
+    "above_1_5": 13,
+    "above_2": 8,
+    "max": 4.152963026915934,
+    "mean": 1.4255991685399807,
+    "median": 1.2426004655011598,
+    "min": 0.605276627425434,
+    "n": 40,
+    "p25_nearest_rank": 0.9562167512062355,
+    "p75_nearest_rank": 1.762601518562743
+  },
+  "creatives": {
+    "formats": {
+      "carousel": 6,
+      "static_image": 12,
+      "story": 12,
+      "video_15s": 8,
+      "video_30s": 12
+    },
+    "hook_types": {
+      "benefit_led": 6,
+      "curiosity": 8,
+      "founder_story": 6,
+      "problem_solution": 7,
+      "social_proof": 6,
+      "ugc_testimonial": 8,
+      "urgency": 9
+    },
+    "served": 40,
+    "served_launch_day_max": 43,
+    "served_launch_day_min": 1,
+    "total": 50,
+    "unserved": 10,
+    "unserved_ids": [
+      "CR006",
+      "CR008",
+      "CR010",
+      "CR014",
+      "CR016",
+      "CR019",
+      "CR032",
+      "CR035",
+      "CR036",
+      "CR037"
+    ]
+  },
+  "daily_quality": {
+    "daily_final": {
+      "creative_count": 40,
+      "day_max": 60,
+      "day_min": 1,
+      "duplicate_keys": 0,
+      "missing_by_column": {
+        "budget": 0,
+        "clicks": 0,
+        "creative_id": 0,
+        "day": 0,
+        "impressions": 0,
+        "purchases": 0,
+        "revenue": 0,
+        "spend": 0
+      },
+      "negative_by_metric": {
+        "budget": 0,
+        "clicks": 0,
+        "impressions": 0,
+        "purchases": 0,
+        "revenue": 0,
+        "spend": 0
+      },
+      "rows": 1784
+    },
+    "daily_reported": {
+      "creative_count": 40,
+      "day_max": 60,
+      "day_min": 1,
+      "duplicate_keys": 0,
+      "missing_by_column": {
+        "budget": 0,
+        "clicks": 0,
+        "creative_id": 0,
+        "day": 0,
+        "impressions": 0,
+        "purchases": 0,
+        "revenue": 0,
+        "spend": 0
+      },
+      "negative_by_metric": {
+        "budget": 0,
+        "clicks": 0,
+        "impressions": 0,
+        "purchases": 0,
+        "revenue": 0,
+        "spend": 0
+      },
+      "rows": 1784
+    }
+  },
+  "data_quality_relations": {
+    "clicks_gt_impressions": 0,
+    "positive_purchases_zero_revenue": 0,
+    "positive_revenue_zero_purchases": 0,
+    "purchases_gt_clicks": 0
+  },
+  "files": {
+    "competitor_launches": {
+      "columns": [
+        "day",
+        "competitor",
+        "platform",
+        "format",
+        "hook_type",
+        "primary_text"
+      ],
+      "rows": 22
+    },
+    "creatives": {
+      "columns": [
+        "creative_id",
+        "format",
+        "hook_type",
+        "headline",
+        "primary_text",
+        "cta",
+        "launch_day"
+      ],
+      "rows": 50
+    },
+    "daily_final": {
+      "columns": [
+        "day",
+        "creative_id",
+        "budget",
+        "spend",
+        "impressions",
+        "clicks",
+        "purchases",
+        "revenue"
+      ],
+      "rows": 1784
+    },
+    "daily_reported": {
+      "columns": [
+        "day",
+        "creative_id",
+        "budget",
+        "spend",
+        "impressions",
+        "clicks",
+        "purchases",
+        "revenue"
+      ],
+      "rows": 1784
+    }
+  },
+  "final_totals": {
+    "budget": {
+      "max": 453.83,
+      "mean": 67.25482062780269,
+      "median": 46.14,
+      "min": 0.0,
+      "n": 1784,
+      "sum": 119982.60000000005
+    },
+    "clicks": {
+      "max": 545.0,
+      "mean": 74.07174887892377,
+      "median": 51.0,
+      "min": 0.0,
+      "n": 1784,
+      "sum": 132144.0
+    },
+    "impressions": {
+      "max": 24020.0,
+      "mean": 4894.798206278027,
+      "median": 3473.5,
+      "min": 0.0,
+      "n": 1784,
+      "sum": 8732320.0
+    },
+    "purchases": {
+      "max": 18.0,
+      "mean": 1.7455156950672646,
+      "median": 1.0,
+      "min": 0.0,
+      "n": 1784,
+      "sum": 3114.0
+    },
+    "revenue": {
+      "max": 1582.5,
+      "mean": 113.16965807174888,
+      "median": 45.55,
+      "min": 0.0,
+      "n": 1784,
+      "sum": 201894.66999999995
+    },
+    "spend": {
+      "max": 310.75,
+      "mean": 63.017662556053814,
+      "median": 46.14,
+      "min": 0.0,
+      "n": 1784,
+      "sum": 112423.5100000001
+    }
+  },
+  "first_seven_days_by_creative": [
+    {
+      "creative_id": "CR001",
+      "launch_day": 15,
+      "revenue": 358.76,
+      "roas": 1.034666,
+      "rows": 7,
+      "spend": 346.74
+    },
+    {
+      "creative_id": "CR002",
+      "launch_day": 1,
+      "revenue": 2549.36,
+      "roas": 2.814236,
+      "rows": 7,
+      "spend": 905.88
+    },
+    {
+      "creative_id": "CR003",
+      "launch_day": 1,
+      "revenue": 4754.02,
+      "roas": 2.878102,
+      "rows": 7,
+      "spend": 1651.79
+    },
+    {
+      "creative_id": "CR004",
+      "launch_day": 21,
+      "revenue": 3174.26,
+      "roas": 2.766818,
+      "rows": 7,
+      "spend": 1147.26
+    },
+    {
+      "creative_id": "CR005",
+      "launch_day": 36,
+      "revenue": 331.18,
+      "roas": 1.133402,
+      "rows": 7,
+      "spend": 292.2
+    },
+    {
+      "creative_id": "CR007",
+      "launch_day": 1,
+      "revenue": 2638.75,
+      "roas": 2.760632,
+      "rows": 7,
+      "spend": 955.85
+    },
+    {
+      "creative_id": "CR009",
+      "launch_day": 18,
+      "revenue": 1496.93,
+      "roas": 3.042726,
+      "rows": 7,
+      "spend": 491.97
+    },
+    {
+      "creative_id": "CR011",
+      "launch_day": 43,
+      "revenue": 262.13,
+      "roas": 1.006141,
+      "rows": 7,
+      "spend": 260.53
+    },
+    {
+      "creative_id": "CR012",
+      "launch_day": 9,
+      "revenue": 600.89,
+      "roas": 1.338762,
+      "rows": 7,
+      "spend": 448.84
+    },
+    {
+      "creative_id": "CR013",
+      "launch_day": 19,
+      "revenue": 1032.34,
+      "roas": 2.007584,
+      "rows": 7,
+      "spend": 514.22
+    },
+    {
+      "creative_id": "CR015",
+      "launch_day": 1,
+      "revenue": 1746.78,
+      "roas": 1.403307,
+      "rows": 7,
+      "spend": 1244.76
+    },
+    {
+      "creative_id": "CR017",
+      "launch_day": 1,
+      "revenue": 1292.82,
+      "roas": 1.454437,
+      "rows": 7,
+      "spend": 888.88
+    },
+    {
+      "creative_id": "CR018",
+      "launch_day": 39,
+      "revenue": 6182.36,
+      "roas": 4.997906,
+      "rows": 7,
+      "spend": 1236.99
+    },
+    {
+      "creative_id": "CR020",
+      "launch_day": 1,
+      "revenue": 1619.26,
+      "roas": 1.483994,
+      "rows": 7,
+      "spend": 1091.15
+    },
+    {
+      "creative_id": "CR021",
+      "launch_day": 1,
+      "revenue": 1944.96,
+      "roas": 1.809484,
+      "rows": 7,
+      "spend": 1074.87
+    },
+    {
+      "creative_id": "CR022",
+      "launch_day": 1,
+      "revenue": 411.91,
+      "roas": 1.059412,
+      "rows": 7,
+      "spend": 388.81
+    },
+    {
+      "creative_id": "CR023",
+      "launch_day": 6,
+      "revenue": 528.55,
+      "roas": 1.363191,
+      "rows": 7,
+      "spend": 387.73
+    },
+    {
+      "creative_id": "CR024",
+      "launch_day": 30,
+      "revenue": 520.59,
+      "roas": 1.304214,
+      "rows": 7,
+      "spend": 399.16
+    },
+    {
+      "creative_id": "CR025",
+      "launch_day": 33,
+      "revenue": 180.73,
+      "roas": 0.963072,
+      "rows": 7,
+      "spend": 187.66
+    },
+    {
+      "creative_id": "CR026",
+      "launch_day": 40,
+      "revenue": 199.52,
+      "roas": 0.730281,
+      "rows": 7,
+      "spend": 273.21
+    },
+    {
+      "creative_id": "CR027",
+      "launch_day": 22,
+      "revenue": 1179.09,
+      "roas": 1.373606,
+      "rows": 7,
+      "spend": 858.39
+    },
+    {
+      "creative_id": "CR028",
+      "launch_day": 1,
+      "revenue": 2339.04,
+      "roas": 2.826634,
+      "rows": 7,
+      "spend": 827.5
+    },
+    {
+      "creative_id": "CR029",
+      "launch_day": 12,
+      "revenue": 422.66,
+      "roas": 1.566626,
+      "rows": 7,
+      "spend": 269.79
+    },
+    {
+      "creative_id": "CR030",
+      "launch_day": 13,
+      "revenue": 0.0,
+      "roas": 0.0,
+      "rows": 7,
+      "spend": 123.78
+    },
+    {
+      "creative_id": "CR031",
+      "launch_day": 34,
+      "revenue": 954.21,
+      "roas": 1.663691,
+      "rows": 7,
+      "spend": 573.55
+    },
+    {
+      "creative_id": "CR033",
+      "launch_day": 16,
+      "revenue": 374.92,
+      "roas": 1.017008,
+      "rows": 7,
+      "spend": 368.65
+    },
+    {
+      "creative_id": "CR034",
+      "launch_day": 37,
+      "revenue": 1405.83,
+      "roas": 2.156379,
+      "rows": 7,
+      "spend": 651.94
+    },
+    {
+      "creative_id": "CR038",
+      "launch_day": 1,
+      "revenue": 5162.35,
+      "roas": 3.142715,
+      "rows": 7,
+      "spend": 1642.64
+    },
+    {
+      "creative_id": "CR039",
+      "launch_day": 27,
+      "revenue": 3501.59,
+      "roas": 3.393704,
+      "rows": 7,
+      "spend": 1031.79
+    },
+    {
+      "creative_id": "CR040",
+      "launch_day": 4,
+      "revenue": 848.73,
+      "roas": 1.0654,
+      "rows": 7,
+      "spend": 796.63
+    },
+    {
+      "creative_id": "CR041",
+      "launch_day": 3,
+      "revenue": 193.0,
+      "roas": 0.711914,
+      "rows": 7,
+      "spend": 271.1
+    },
+    {
+      "creative_id": "CR042",
+      "launch_day": 1,
+      "revenue": 1417.16,
+      "roas": 1.809495,
+      "rows": 7,
+      "spend": 783.18
+    },
+    {
+      "creative_id": "CR043",
+      "launch_day": 31,
+      "revenue": 164.06,
+      "roas": 0.752534,
+      "rows": 7,
+      "spend": 218.01
+    },
+    {
+      "creative_id": "CR044",
+      "launch_day": 1,
+      "revenue": 811.52,
+      "roas": 1.189511,
+      "rows": 7,
+      "spend": 682.23
+    },
+    {
+      "creative_id": "CR045",
+      "launch_day": 10,
+      "revenue": 33.64,
+      "roas": 0.325496,
+      "rows": 7,
+      "spend": 103.35
+    },
+    {
+      "creative_id": "CR046",
+      "launch_day": 25,
+      "revenue": 165.42,
+      "roas": 0.907206,
+      "rows": 7,
+      "spend": 182.34
+    },
+    {
+      "creative_id": "CR047",
+      "launch_day": 24,
+      "revenue": 769.44,
+      "roas": 1.6913,
+      "rows": 7,
+      "spend": 454.94
+    },
+    {
+      "creative_id": "CR048",
+      "launch_day": 7,
+      "revenue": 228.29,
+      "roas": 0.6959,
+      "rows": 7,
+      "spend": 328.05
+    },
+    {
+      "creative_id": "CR049",
+      "launch_day": 28,
+      "revenue": 507.25,
+      "roas": 1.46439,
+      "rows": 7,
+      "spend": 346.39
+    },
+    {
+      "creative_id": "CR050",
+      "launch_day": 42,
+      "revenue": 0.0,
+      "roas": 0.0,
+      "rows": 7,
+      "spend": 71.44
+    }
+  ],
+  "missing_values": {
+    "competitor_launches": {
+      "competitor": 0,
+      "day": 0,
+      "format": 0,
+      "hook_type": 0,
+      "platform": 0,
+      "primary_text": 0
+    },
+    "creatives": {
+      "creative_id": 0,
+      "cta": 0,
+      "format": 0,
+      "headline": 0,
+      "hook_type": 0,
+      "launch_day": 10,
+      "primary_text": 0
+    },
+    "daily_final": {
+      "budget": 0,
+      "clicks": 0,
+      "creative_id": 0,
+      "day": 0,
+      "impressions": 0,
+      "purchases": 0,
+      "revenue": 0,
+      "spend": 0
+    },
+    "daily_reported": {
+      "budget": 0,
+      "clicks": 0,
+      "creative_id": 0,
+      "day": 0,
+      "impressions": 0,
+      "purchases": 0,
+      "revenue": 0,
+      "spend": 0
+    }
+  },
+  "reported_vs_final": {
+    "by_metric": {
+      "budget": {
+        "absolute_delta_sum": 0.0,
+        "changed_rows": 0,
+        "delta_sum": 0.0,
+        "max_delta": 0.0,
+        "min_delta": 0.0,
+        "rows": 1784
+      },
+      "clicks": {
+        "absolute_delta_sum": 0.0,
+        "changed_rows": 0,
+        "delta_sum": 0.0,
+        "max_delta": 0.0,
+        "min_delta": 0.0,
+        "rows": 1784
+      },
+      "impressions": {
+        "absolute_delta_sum": 0.0,
+        "changed_rows": 0,
+        "delta_sum": 0.0,
+        "max_delta": 0.0,
+        "min_delta": 0.0,
+        "rows": 1784
+      },
+      "purchases": {
+        "absolute_delta_sum": 142.0,
+        "changed_rows": 84,
+        "delta_sum": 142.0,
+        "max_delta": 5.0,
+        "min_delta": 0.0,
+        "rows": 1784
+      },
+      "revenue": {
+        "absolute_delta_sum": 8953.079999999996,
+        "changed_rows": 156,
+        "delta_sum": 8953.079999999996,
+        "max_delta": 748.94,
+        "min_delta": 0.0,
+        "rows": 1784
+      },
+      "spend": {
+        "absolute_delta_sum": 0.0,
+        "changed_rows": 0,
+        "delta_sum": 0.0,
+        "max_delta": 0.0,
+        "min_delta": 0.0,
+        "rows": 1784
+      }
+    },
+    "final_only_keys": 0,
+    "final_outcome_totals": {
+      "purchases": 3114.0,
+      "revenue": 201894.66999999995
+    },
+    "reported_only_keys": 0,
+    "reported_outcome_totals": {
+      "purchases": 2972.0,
+      "revenue": 192941.59000000003
+    },
+    "shared_keys": 1784,
+    "windows": [
+      {
+        "end_day": 7,
+        "purchase_changed_rows": 0,
+        "purchase_delta": 0.0,
+        "revenue_changed_rows": 0,
+        "revenue_delta": 0.0,
+        "rows": 96,
+        "start_day": 1
+      },
+      {
+        "end_day": 14,
+        "purchase_changed_rows": 0,
+        "purchase_delta": 0.0,
+        "revenue_changed_rows": 0,
+        "revenue_delta": 0.0,
+        "rows": 128,
+        "start_day": 8
+      },
+      {
+        "end_day": 30,
+        "purchase_changed_rows": 0,
+        "purchase_delta": 0.0,
+        "revenue_changed_rows": 0,
+        "revenue_delta": 0.0,
+        "rows": 416,
+        "start_day": 15
+      },
+      {
+        "end_day": 45,
+        "purchase_changed_rows": 0,
+        "purchase_delta": 0.0,
+        "revenue_changed_rows": 0,
+        "revenue_delta": 0.0,
+        "rows": 544,
+        "start_day": 31
+      },
+      {
+        "end_day": 60,
+        "purchase_changed_rows": 84,
+        "purchase_delta": 142.0,
+        "revenue_changed_rows": 156,
+        "revenue_delta": 8953.079999999996,
+        "rows": 600,
+        "start_day": 46
+      }
+    ]
+  },
+  "spend_vs_budget": {
+    "budget_total": 119982.60000000005,
+    "daily_budget_distribution": {
+      "max": 2000.0400000000002,
+      "mean": 1999.71,
+      "median": 1999.9550000000002,
+      "min": 1998.1199999999997,
+      "n": 60,
+      "sum": 119982.59999999998
+    },
+    "daily_spend_distribution": {
+      "max": 1997.1299999999999,
+      "mean": 1873.7251666666666,
+      "median": 1876.7150000000001,
+      "min": 1685.7199999999998,
+      "n": 60,
+      "sum": 112423.50999999995
+    },
+    "rows_equal_budget": 1689,
+    "rows_over_budget": 0,
+    "rows_under_budget": 95,
+    "spend_to_budget": 0.9369984481083095,
+    "spend_total": 112423.5100000001,
+    "zero_spend_rows": 91
+  },
+  "temporal": {
+    "age_bins": [
+      {
+        "age_end": 2,
+        "age_start": 0,
+        "creatives": 40,
+        "revenue": 23482.110000000004,
+        "roas": 2.116575133919036,
+        "rows": 120,
+        "spend": 11094.389999999996
+      },
+      {
+        "age_end": 6,
+        "age_start": 0,
+        "creatives": 40,
+        "revenue": 52304.29999999998,
+        "roas": 2.111241578433039,
+        "rows": 280,
+        "spend": 24774.189999999984
+      },
+      {
+        "age_end": 13,
+        "age_start": 7,
+        "creatives": 40,
+        "revenue": 47917.090000000026,
+        "roas": 2.0009842667651077,
+        "rows": 280,
+        "spend": 23946.760000000006
+      },
+      {
+        "age_end": 27,
+        "age_start": 14,
+        "creatives": 40,
+        "revenue": 62100.87999999998,
+        "roas": 1.7037021389252007,
+        "rows": 520,
+        "spend": 36450.55
+      },
+      {
+        "age_end": 60,
+        "age_start": 28,
+        "creatives": 32,
+        "revenue": 39572.39999999999,
+        "roas": 1.4520910567697567,
+        "rows": 704,
+        "spend": 27252.010000000006
+      }
+    ],
+    "daily": [
+      {
+        "budget": 2000.04,
+        "day": 1,
+        "revenue": 4442.69,
+        "roas": 2.307124,
+        "rows": 12,
+        "spend": 1925.64
+      },
+      {
+        "budget": 2000.0,
+        "day": 2,
+        "revenue": 4133.81,
+        "roas": 2.278661,
+        "rows": 12,
+        "spend": 1814.14
+      },
+      {
+        "budget": 2000.0,
+        "day": 3,
+        "revenue": 4008.95,
+        "roas": 2.099015,
+        "rows": 13,
+        "spend": 1909.92
+      },
+      {
+        "budget": 1999.99,
+        "day": 4,
+        "revenue": 3823.25,
+        "roas": 2.043863,
+        "rows": 14,
+        "spend": 1870.6
+      },
+      {
+        "budget": 1999.99,
+        "day": 5,
+        "revenue": 2955.78,
+        "roas": 1.579482,
+        "rows": 14,
+        "spend": 1871.36
+      },
+      {
+        "budget": 2000.0,
+        "day": 6,
+        "revenue": 3797.62,
+        "roas": 1.994286,
+        "rows": 15,
+        "spend": 1904.25
+      },
+      {
+        "budget": 2000.0,
+        "day": 7,
+        "revenue": 4669.64,
+        "roas": 2.48508,
+        "rows": 16,
+        "spend": 1879.07
+      },
+      {
+        "budget": 2000.0,
+        "day": 8,
+        "revenue": 2771.27,
+        "roas": 1.509242,
+        "rows": 16,
+        "spend": 1836.2
+      },
+      {
+        "budget": 1999.99,
+        "day": 9,
+        "revenue": 4488.83,
+        "roas": 2.443938,
+        "rows": 17,
+        "spend": 1836.72
+      },
+      {
+        "budget": 2000.01,
+        "day": 10,
+        "revenue": 4887.56,
+        "roas": 2.634604,
+        "rows": 18,
+        "spend": 1855.14
+      },
+      {
+        "budget": 1999.98,
+        "day": 11,
+        "revenue": 4016.79,
+        "roas": 2.171402,
+        "rows": 18,
+        "spend": 1849.86
+      },
+      {
+        "budget": 1999.99,
+        "day": 12,
+        "revenue": 3349.12,
+        "roas": 1.795707,
+        "rows": 19,
+        "spend": 1865.07
+      },
+      {
+        "budget": 2000.01,
+        "day": 13,
+        "revenue": 3144.23,
+        "roas": 1.574374,
+        "rows": 20,
+        "spend": 1997.13
+      },
+      {
+        "budget": 2000.01,
+        "day": 14,
+        "revenue": 3105.6,
+        "roas": 1.596004,
+        "rows": 20,
+        "spend": 1945.86
+      },
+      {
+        "budget": 1999.98,
+        "day": 15,
+        "revenue": 3429.27,
+        "roas": 1.761762,
+        "rows": 21,
+        "spend": 1946.5
+      },
+      {
+        "budget": 2000.02,
+        "day": 16,
+        "revenue": 2898.94,
+        "roas": 1.546629,
+        "rows": 22,
+        "spend": 1874.36
+      },
+      {
+        "budget": 1999.54,
+        "day": 17,
+        "revenue": 3444.65,
+        "roas": 1.81542,
+        "rows": 22,
+        "spend": 1897.44
+      },
+      {
+        "budget": 1999.43,
+        "day": 18,
+        "revenue": 2240.52,
+        "roas": 1.170761,
+        "rows": 23,
+        "spend": 1913.73
+      },
+      {
+        "budget": 1999.86,
+        "day": 19,
+        "revenue": 2974.61,
+        "roas": 1.587551,
+        "rows": 24,
+        "spend": 1873.71
+      },
+      {
+        "budget": 1999.92,
+        "day": 20,
+        "revenue": 4101.62,
+        "roas": 2.08422,
+        "rows": 24,
+        "spend": 1967.94
+      },
+      {
+        "budget": 2000.02,
+        "day": 21,
+        "revenue": 3751.33,
+        "roas": 1.928367,
+        "rows": 25,
+        "spend": 1945.34
+      },
+      {
+        "budget": 2000.01,
+        "day": 22,
+        "revenue": 3313.94,
+        "roas": 1.728585,
+        "rows": 26,
+        "spend": 1917.14
+      },
+      {
+        "budget": 2000.02,
+        "day": 23,
+        "revenue": 3017.27,
+        "roas": 1.528436,
+        "rows": 26,
+        "spend": 1974.09
+      },
+      {
+        "budget": 2000.01,
+        "day": 24,
+        "revenue": 3087.15,
+        "roas": 1.560585,
+        "rows": 27,
+        "spend": 1978.2
+      },
+      {
+        "budget": 1999.28,
+        "day": 25,
+        "revenue": 3770.53,
+        "roas": 1.934627,
+        "rows": 28,
+        "spend": 1948.97
+      },
+      {
+        "budget": 1999.93,
+        "day": 26,
+        "revenue": 3409.84,
+        "roas": 1.770086,
+        "rows": 28,
+        "spend": 1926.37
+      },
+      {
+        "budget": 1999.97,
+        "day": 27,
+        "revenue": 2743.44,
+        "roas": 1.442898,
+        "rows": 29,
+        "spend": 1901.34
+      },
+      {
+        "budget": 1999.99,
+        "day": 28,
+        "revenue": 3908.56,
+        "roas": 2.06152,
+        "rows": 30,
+        "spend": 1895.96
+      },
+      {
+        "budget": 1999.98,
+        "day": 29,
+        "revenue": 3821.55,
+        "roas": 1.951453,
+        "rows": 30,
+        "spend": 1958.31
+      },
+      {
+        "budget": 1999.99,
+        "day": 30,
+        "revenue": 3502.91,
+        "roas": 1.81822,
+        "rows": 31,
+        "spend": 1926.56
+      },
+      {
+        "budget": 1999.99,
+        "day": 31,
+        "revenue": 2363.52,
+        "roas": 1.247727,
+        "rows": 32,
+        "spend": 1894.26
+      },
+      {
+        "budget": 2000.01,
+        "day": 32,
+        "revenue": 3416.55,
+        "roas": 1.794812,
+        "rows": 32,
+        "spend": 1903.57
+      },
+      {
+        "budget": 1999.58,
+        "day": 33,
+        "revenue": 3631.28,
+        "roas": 1.947829,
+        "rows": 33,
+        "spend": 1864.27
+      },
+      {
+        "budget": 1999.93,
+        "day": 34,
+        "revenue": 2314.91,
+        "roas": 1.26215,
+        "rows": 34,
+        "spend": 1834.1
+      },
+      {
+        "budget": 1999.96,
+        "day": 35,
+        "revenue": 2560.54,
+        "roas": 1.407586,
+        "rows": 34,
+        "spend": 1819.1
+      },
+      {
+        "budget": 2000.0,
+        "day": 36,
+        "revenue": 2655.89,
+        "roas": 1.460299,
+        "rows": 35,
+        "spend": 1818.73
+      },
+      {
+        "budget": 1998.12,
+        "day": 37,
+        "revenue": 2225.91,
+        "roas": 1.181324,
+        "rows": 36,
+        "spend": 1884.25
+      },
+      {
+        "budget": 1999.13,
+        "day": 38,
+        "revenue": 2672.39,
+        "roas": 1.435303,
+        "rows": 36,
+        "spend": 1861.9
+      },
+      {
+        "budget": 1999.52,
+        "day": 39,
+        "revenue": 3031.9,
+        "roas": 1.642817,
+        "rows": 37,
+        "spend": 1845.55
+      },
+      {
+        "budget": 1998.79,
+        "day": 40,
+        "revenue": 3288.93,
+        "roas": 1.689941,
+        "rows": 38,
+        "spend": 1946.18
+      },
+      {
+        "budget": 1999.9,
+        "day": 41,
+        "revenue": 4152.52,
+        "roas": 2.109281,
+        "rows": 38,
+        "spend": 1968.69
+      },
+      {
+        "budget": 1999.93,
+        "day": 42,
+        "revenue": 4201.24,
+        "roas": 2.128579,
+        "rows": 39,
+        "spend": 1973.73
+      },
+      {
+        "budget": 2000.01,
+        "day": 43,
+        "revenue": 3090.38,
+        "roas": 1.58806,
+        "rows": 40,
+        "spend": 1946.01
+      },
+      {
+        "budget": 1999.66,
+        "day": 44,
+        "revenue": 2824.52,
+        "roas": 1.520906,
+        "rows": 40,
+        "spend": 1857.13
+      },
+      {
+        "budget": 1999.79,
+        "day": 45,
+        "revenue": 4071.7,
+        "roas": 2.220386,
+        "rows": 40,
+        "spend": 1833.78
+      },
+      {
+        "budget": 1999.35,
+        "day": 46,
+        "revenue": 2957.3,
+        "roas": 1.662666,
+        "rows": 40,
+        "spend": 1778.65
+      },
+      {
+        "budget": 1999.18,
+        "day": 47,
+        "revenue": 3272.11,
+        "roas": 1.824163,
+        "rows": 40,
+        "spend": 1793.76
+      },
+      {
+        "budget": 1999.93,
+        "day": 48,
+        "revenue": 3248.12,
+        "roas": 1.838191,
+        "rows": 40,
+        "spend": 1767.02
+      },
+      {
+        "budget": 1999.4,
+        "day": 49,
+        "revenue": 3427.29,
+        "roas": 1.963129,
+        "rows": 40,
+        "spend": 1745.83
+      },
+      {
+        "budget": 1999.96,
+        "day": 50,
+        "revenue": 3727.35,
+        "roas": 2.115169,
+        "rows": 40,
+        "spend": 1762.2
+      },
+      {
+        "budget": 1998.84,
+        "day": 51,
+        "revenue": 2576.46,
+        "roas": 1.472036,
+        "rows": 40,
+        "spend": 1750.27
+      },
+      {
+        "budget": 1999.76,
+        "day": 52,
+        "revenue": 3046.17,
+        "roas": 1.807044,
+        "rows": 40,
+        "spend": 1685.72
+      },
+      {
+        "budget": 1998.91,
+        "day": 53,
+        "revenue": 3143.48,
+        "roas": 1.852757,
+        "rows": 40,
+        "spend": 1696.65
+      },
+      {
+        "budget": 1999.24,
+        "day": 54,
+        "revenue": 3335.36,
+        "roas": 1.918594,
+        "rows": 40,
+        "spend": 1738.44
+      },
+      {
+        "budget": 1999.49,
+        "day": 55,
+        "revenue": 2923.78,
+        "roas": 1.677586,
+        "rows": 40,
+        "spend": 1742.85
+      },
+      {
+        "budget": 1998.97,
+        "day": 56,
+        "revenue": 2936.83,
+        "roas": 1.598588,
+        "rows": 40,
+        "spend": 1837.14
+      },
+      {
+        "budget": 1999.95,
+        "day": 57,
+        "revenue": 2736.77,
+        "roas": 1.450259,
+        "rows": 40,
+        "spend": 1887.09
+      },
+      {
+        "budget": 1999.46,
+        "day": 58,
+        "revenue": 4312.41,
+        "roas": 2.194443,
+        "rows": 40,
+        "spend": 1965.15
+      },
+      {
+        "budget": 1999.19,
+        "day": 59,
+        "revenue": 2925.78,
+        "roas": 1.504892,
+        "rows": 40,
+        "spend": 1944.18
+      },
+      {
+        "budget": 1998.69,
+        "day": 60,
+        "revenue": 3812.01,
+        "roas": 2.038083,
+        "rows": 40,
+        "spend": 1870.39
+      }
+    ],
+    "first_10_days": {
+      "days": 10,
+      "revenue": 39979.39999999999,
+      "spend": 18703.03999999999
+    },
+    "last_10_days": {
+      "days": 10,
+      "revenue": 31749.05,
+      "spend": 18117.880000000005
+    },
+    "weekly": [
+      {
+        "ctr": 0.016859,
+        "end_day": 7,
+        "purchases_per_click": 0.025168,
+        "revenue": 27831.74,
+        "roas": 2.112469,
+        "rows": 96,
+        "spend": 13174.98,
+        "start_day": 1
+      },
+      {
+        "ctr": 0.01461,
+        "end_day": 14,
+        "purchases_per_click": 0.02577,
+        "revenue": 25763.4,
+        "roas": 1.953848,
+        "rows": 128,
+        "spend": 13185.98,
+        "start_day": 8
+      },
+      {
+        "ctr": 0.013871,
+        "end_day": 21,
+        "purchases_per_click": 0.024497,
+        "revenue": 22840.94,
+        "roas": 1.702132,
+        "rows": 161,
+        "spend": 13419.02,
+        "start_day": 15
+      },
+      {
+        "ctr": 0.015108,
+        "end_day": 28,
+        "purchases_per_click": 0.021662,
+        "revenue": 23250.73,
+        "roas": 1.716926,
+        "rows": 194,
+        "spend": 13542.07,
+        "start_day": 22
+      },
+      {
+        "ctr": 0.015421,
+        "end_day": 35,
+        "purchases_per_click": 0.023002,
+        "revenue": 21611.26,
+        "roas": 1.637196,
+        "rows": 226,
+        "spend": 13200.17,
+        "start_day": 29
+      },
+      {
+        "ctr": 0.015775,
+        "end_day": 42,
+        "purchases_per_click": 0.022315,
+        "revenue": 22228.78,
+        "roas": 1.671459,
+        "rows": 259,
+        "spend": 13299.03,
+        "start_day": 36
+      },
+      {
+        "ctr": 0.014874,
+        "end_day": 49,
+        "purchases_per_click": 0.022311,
+        "revenue": 22891.42,
+        "roas": 1.799332,
+        "rows": 280,
+        "spend": 12722.18,
+        "start_day": 43
+      },
+      {
+        "ctr": 0.015039,
+        "end_day": 56,
+        "purchases_per_click": 0.023115,
+        "revenue": 21689.43,
+        "roas": 1.77589,
+        "rows": 280,
+        "spend": 12213.27,
+        "start_day": 50
+      },
+      {
+        "ctr": 0.014204,
+        "end_day": 60,
+        "purchases_per_click": 0.024874,
+        "revenue": 13786.97,
+        "roas": 1.798267,
+        "rows": 160,
+        "spend": 7666.81,
+        "start_day": 57
+      }
+    ]
+  }
+}
